@@ -15,11 +15,15 @@ const promos = [
 
 let ad = promos[Math.floor(Math.random() * promos.length)];
 
-document.getElementById("sarthaAdContainer").innerHTML = `
-  <div class="sartha-bar">
-    <div class="sartha-text">${ad.text}</div>
-    <a href="${ad.link}" class="sartha-btn">${ad.btn}</a>
-  </div>
-`;
+let container = document.getElementById("sarthaAdContainer");
+
+if(container){
+  container.innerHTML = `
+    <div class="sartha-bar">
+      <div class="sartha-text">${ad.text}</div>
+      <a href="${ad.link}" class="sartha-btn">${ad.btn}</a>
+    </div>
+  `;
+}
 
 });
