@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 const promos = [
   {
     text: "🎓 SARTHA Counselling – Personal Mentor",
@@ -19,3 +21,5 @@ document.getElementById("sarthaAdContainer").innerHTML = `
     <a href="${ad.link}" class="sartha-btn">${ad.btn}</a>
   </div>
 `;
+
+});
