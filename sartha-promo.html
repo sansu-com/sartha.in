@@ -2,8 +2,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body { margin:0; }
+body {
+  margin: 0;
+}
 
 .sartha-bar {
   position: fixed;
@@ -16,7 +19,8 @@ body { margin:0; }
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .sartha-text {
@@ -38,13 +42,49 @@ body { margin:0; }
   font-weight: bold;
 }
 </style>
+
 </head>
 
 <body>
 
 <div id="ad"></div>
 
-<script src="https://cdn.jsdelivr.net/gh/sansu-com/sartha.in/sartha-promo.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const promos = [
+  {
+    text: "🎓 SARTHA Counselling – Personal Mentor till Admission",
+    btn: "Apply",
+    link: "https://wa.me/91XXXXXXXXXX"
+  },
+  {
+    text: "🔥 NEET 2026 Counselling Started – Secure Govt Seat",
+    btn: "Join",
+    link: "https://wa.me/91XXXXXXXXXX"
+  },
+  {
+    text: "📊 AIIMS & GMC Preference List + Verified Cutoffs",
+    btn: "Get List",
+    link: "https://wa.me/91XXXXXXXXXX"
+  }
+];
+
+let ad = promos[Math.floor(Math.random() * promos.length)];
+
+let container = document.getElementById("ad");
+
+if(container){
+  container.innerHTML = `
+    <div class="sartha-bar">
+      <div class="sartha-text">${ad.text}</div>
+      <a href="${ad.link}" class="sartha-btn">${ad.btn}</a>
+    </div>
+  `;
+}
+
+});
+</script>
 
 </body>
 </html>
