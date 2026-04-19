@@ -3,37 +3,53 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body { margin:0; font-family:Arial; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
 .banner {
-  margin: 10px;
-  padding: 16px;
-  border-radius: 12px;
+  width: 300px;
+  height: 250px;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
-  font-size:16px;
-  font-weight:bold;
-  margin-bottom:6px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .desc {
-  font-size:13px;
-  margin-bottom:10px;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.badges span {
+  background: rgba(255,255,255,0.15);
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  margin-right: 4px;
 }
 
 .btn {
-  display:block;
-  text-align:center;
-  background:#22c55e;
-  color:#fff;
-  padding:10px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
+  display: block;
+  text-align: center;
+  background: #22c55e;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
 }
 </style>
 </head>
@@ -43,43 +59,44 @@ body { margin:0; font-family:Arial; }
 <div class="banner" id="banner"></div>
 
 <script>
-const banners = [
+const ads = [
   {
-    title: "🎓 SARTHA Counselling 2026",
-    desc: "Get Personal Mentor + Govt MBBS Strategy + Cutoff Data",
-    btn: "Get Guidance",
-    link: "https://wa.me/91XXXXXXXXXX"
-  },
-  {
-    title: "🔥 NEET 2026 Counselling Started",
-    desc: "Avoid Wrong College Choice – Get Expert Help",
+    title: "🎓 NEET Counselling 2026",
+    desc: "Get Personal Mentor + Govt MBBS Strategy + Verified Cutoffs",
     btn: "Apply Now",
     link: "https://wa.me/91XXXXXXXXXX"
   },
   {
-    title: "📊 AIIMS & GMC Preference List",
-    desc: "Verified Data + Round-wise Strategy",
+    title: "🔥 Secure Govt MBBS Seat",
+    desc: "AIIMS + GMC Preference List with Expert Guidance",
     btn: "Get List",
+    link: "https://wa.me/91XXXXXXXXXX"
+  },
+  {
+    title: "📊 Avoid Wrong College",
+    desc: "Round-wise Strategy + MCC + State Support",
+    btn: "Get Guidance",
     link: "https://wa.me/91XXXXXXXXXX"
   }
 ];
 
-let ad = banners[Math.floor(Math.random() * banners.length)];
+let ad = ads[Math.floor(Math.random() * ads.length)];
 
 document.getElementById("banner").innerHTML = `
-  <div class="title">${ad.title}</div>
-  <div class="desc">${ad.desc}</div>
+  <div>
+    <div class="title">${ad.title}</div>
+    <div class="desc">${ad.desc}</div>
+  </div>
+
+  <div class="badges">
+    <span>AIIMS</span>
+    <span>Cutoff</span>
+    <span>Strategy</span>
+  </div>
+
   <a href="${ad.link}" class="btn">${ad.btn}</a>
 `;
 </script>
-<script>
-function sendHeight() {
-  const height = document.body.scrollHeight;
-  window.parent.postMessage({ type: "resize-iframe", height: height }, "*");
-}
 
-window.onload = sendHeight;
-window.onresize = sendHeight;
-</script>
 </body>
 </html>
