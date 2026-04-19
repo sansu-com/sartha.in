@@ -72,6 +72,14 @@ document.getElementById("banner").innerHTML = `
   <a href="${ad.link}" class="btn">${ad.btn}</a>
 `;
 </script>
+<script>
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({ type: "resize-iframe", height: height }, "*");
+}
 
+window.onload = sendHeight;
+window.onresize = sendHeight;
+</script>
 </body>
 </html>
