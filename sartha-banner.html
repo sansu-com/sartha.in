@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; font-family:Arial; }
+
+.banner {
+  margin: 10px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.title {
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.desc {
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.btn {
+  display:block;
+  text-align:center;
+  background:#22c55e;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="banner" id="banner"></div>
+
+<script>
+const banners = [
+  {
+    title: "🎓 SARTHA Counselling 2026",
+    desc: "Get Personal Mentor + Govt MBBS Strategy + Cutoff Data",
+    btn: "Get Guidance",
+    link: "https://wa.me/91XXXXXXXXXX"
+  },
+  {
+    title: "🔥 NEET 2026 Counselling Started",
+    desc: "Avoid Wrong College Choice – Get Expert Help",
+    btn: "Apply Now",
+    link: "https://wa.me/91XXXXXXXXXX"
+  },
+  {
+    title: "📊 AIIMS & GMC Preference List",
+    desc: "Verified Data + Round-wise Strategy",
+    btn: "Get List",
+    link: "https://wa.me/91XXXXXXXXXX"
+  }
+];
+
+let ad = banners[Math.floor(Math.random() * banners.length)];
+
+document.getElementById("banner").innerHTML = `
+  <div class="title">${ad.title}</div>
+  <div class="desc">${ad.desc}</div>
+  <a href="${ad.link}" class="btn">${ad.btn}</a>
+`;
+</script>
+
+</body>
+</html>
